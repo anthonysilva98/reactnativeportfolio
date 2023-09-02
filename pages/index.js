@@ -1,118 +1,299 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
+import Head from "next/head";
+import Image from "next/image";
+import { AiFillLinkedin, AiFillGithub, SiIndeed } from "react-icons/ai";
+import useState from "react";
 export default function Home() {
+  function goToWeb(link) {
+    window.open(link);
+  }
+  // const [darkMode, setDarkMode] = useState(false);
+  const Linkedin = "https://www.linkedin.com/in/anthony-silva-3424a4253/";
+  const GitHub = "https://github.com/anthonysilva98";
+  const Resume = "Anthony_Silva_Website_Resume.pdf";
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <div>
+      <Head>
+        <title>Anthony Silva Portfolio</title>
+        <meta name="description" content="Generated by create next app" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="bg-white px-10 md:px-20 lg:px-40">
+        <section>
+          <nav className="py-10 mb-12 flex justify-between">
+            <ul className="flex items-center">
+              <li></li>
+              <li>
+                <a
+                  className="bg-gradient-to-r  from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
+                  href="#"
+                  onClick={() => {
+                    window.open(Resume);
+                  }}
+                >
+                  Resume
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div className="text-center p-10 ">
+            <h2 className="text-5xl py-2 font-medium text-teal-600 md:text-6xl">
+              Anthony Silva
+            </h2>
+            <h3 className="text-2xl py-2 md:text-3xl"> Software developer</h3>
+            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto">
+              Full stack software developer that specializes in mobile
+              development using JavaScript and react native.
+            </p>
+          </div>
+          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+            <button onClick={() => goToWeb(Linkedin)}>
+              <AiFillLinkedin />
+            </button>
+            <button onClick={() => goToWeb(GitHub)}>
+              <AiFillGithub />
+            </button>
+          </div>
+        </section>
+        <section>
+          <h3 className="text-3xl py-10 justify-center flex  text-gray-600">
+            Tech Stack
+          </h3>
+          <section>
+            <div className="grid grid-cols-3 pt-10">
+              <div className="flex justify-center align-middle py-5">
+                <picture>
+                  <img
+                    alt="vercel.svg"
+                    className="h-20 w-30 pl-12"
+                    src="/ReactNativelogo.jfif"
+                  />
+                </picture>
+                <p className="list-none text-2xl  align-middle pl-5 justify-center py-5  text-gray-600">
+                  React Native
+                </p>
+              </div>
+              <div className="flex justify-center self-auto py-5">
+                <picture>
+                  <img
+                    alt="vercel.svg"
+                    className="h-20 w-20"
+                    src="/JSLogo.png"
+                  />
+                </picture>
+                <p className="list-none text-2xl  align-middle pl-5 justify-center py-5  text-gray-600">
+                  JavaScript
+                </p>
+              </div>
+              <div className="flex justify-center align-middle py-5">
+                <picture>
+                  <img
+                    alt="vercel.svg"
+                    className="h-20 w-20"
+                    src="/ExpoLogo.png"
+                  />
+                </picture>
+                <li className="list-none text-2xl  align-middle pl-5 justify-center py-5  text-gray-600">
+                  Expo
+                </li>
+              </div>
+              <div className="flex justify-center align-middle py-5">
+                <picture>
+                  <img
+                    alt="vercel.svg"
+                    className="h-20 w-20"
+                    src="/FirebaseLogo.jfif"
+                  />
+                </picture>
+                <p className="list-none text-2xl  align-middle pl-5 justify-center py-5  text-gray-600">
+                  Firebase
+                </p>
+              </div>
+              <div className="flex justify-center align-middle py-5">
+                <picture>
+                  <img
+                    alt="vercel.svg"
+                    className="h-20 w-20"
+                    src="/TSLogo.png"
+                  />
+                </picture>
+                <p className="list-none text-2xl align-middle pl-5 justify-center py-5  text-gray-600">
+                  TypeScript
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-3xl pt-20 justify-center flex text-gray-600">
+                React-Native Projects Portfolio
+              </h3>
+            </div>
+          </section>
+          <div className="lg:flex gap-10 justify-center grid ">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 justify-center">
+              <p className="text-2xl py-1 text-gray-800 flex-1">
+                UPS Tracker Demo
+              </p>
+              <video autoPlay loop muted className="h-300">
+                <source src="/upsDemo.mp4" type="video/mp4" />
+              </video>
+              <p className="text-2xl py-1 text-gray-800">graphQL</p>
+              <p className="text-md py-1 text-gray-800">
+                Custom Graph QL backend that allows filtering, searching and
+                viewing of items that in a Firebase database.
+              </p>
+              <p className="text-2xl py-1 text-black-800">TailwindCSS</p>
+              <p className="text-md py-1 text-gray-800">
+                Built out all custom components using TailwindCSS that allows
+                for easy creation and styling.
+              </p>
+              <p className="text-2xl py-1 text-gray-800">FireBase</p>
+              <p className="text-md py-1 text-gray-800">
+                Using Firebase database, was able to store the data in JSON
+                format to allow for easy requests and data manipulation.
+              </p>
+            </div>
+            <div>
+              <div className="text-center shadow-lg p-10 rounded-xl my-10">
+                <p className="text-2xl py-1 text-gray-800 flex-1">
+                  UberEats App Demo
+                </p>
+                <video autoPlay loop muted className="h-300">
+                  <source src="/UberEats.mp4" type="video/mp4" />
+                </video>
+                <p className="text-2xl py-1 text-gray-800">Google Places Api</p>
+                <p className="text-md py-1 text-gray-800">
+                  Built out custom components that allow for a user to select
+                  where they would like to go and render components on screen
+                  based off of this decision.
+                </p>
+                <p className="text-2xl py-1 text-gray-800">FireBase</p>
+                <p className="text-md py-1 text-gray-800">
+                  Using Firebase Firstore, was able to store and show users
+                  their orders that were created with the user interface.
+                  {/* Using Firebase Firestore, was able to allow users to create an
+                  order which would be sent to Firestore to be retreived when
+                  showing their final order. Firebase backend that handles
+                  orders that are sent out through the app */}
+                </p>
+                <p className="text-2xl py-1 text-gray-800">Yelp Api</p>
+                <p className="text-md py-1 text-gray-800">
+                  With integration of the Yelp API, I was able to display
+                  information about the resturants queried from the google
+                  places API.
+                </p>
+                <p className="text-2xl py-1 text-gray-800">Redux</p>
+                <p className="text-md py-1 text-gray-800">
+                  Redux is used in this project for state management and allows
+                  users to create order and push it to firebase backend
+                </p>
+              </div>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <p className="text-2xl py-1 text-gray-800">Step Counter App</p>
+              <video autoPlay loop muted className="h-300">
+                <source src="/StepCounterApp.mov" type="video/mp4" />
+              </video>
+              <p className="text-2xl py-1 text-gray-800 flex-1">
+                Apple HealthKit
+              </p>
+              <p className="text-md py-1 text-gray-800">
+                Integrating with Apple HealthKit, I was able to get information
+                provided by Apple devices that shows health information.
+              </p>
+              <p></p>
+              <p className="text-2xl py-1 text-gray-800">
+                React Native Reanimated
+              </p>
+              <p className="text-md py-1 text-gray-800">
+                Using React Native Reanimated, I was able to create custom
+                components that drive the animations that are used to show users
+                goal completion
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="lg:flex gap-10 justify-center grid">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 justify-center">
+              <p className="text-2xl py-1 text-gray-800">Uber Rideshare Demo</p>
+              <video autoPlay loop muted className="h-300">
+                <source src="/UberDemo.mov" type="video/mp4" />
+              </video>
+              <p className="text-2xl py-1 text-gray-800">Google Places API</p>
+              <p className="text-md py-1 text-gray-800">
+                Google Places API used for getting places and autofilling for
+                better user experience
+              </p>
+              <p className="text-2xl py-1 text-black-800">TailwindCSS</p>
+              <p className="text-md py-1 text-gray-800">
+                Allows for easy and fast paced components to be built
+              </p>
+              <p className="text-2xl py-1 text-gray-800">
+                Google Distance Matrix
+              </p>
+              <p className="text-md py-1 text-gray-800">
+                Google Distance matrix allows for calculating how long a ride
+                will take along with how much that ride should cost
+              </p>
+              <p className="text-2xl py-1 text-gray-800">Redux</p>
+              <p className="text-md py-1 text-gray-800">
+                Used for state management and allows for users to request rides
+                and set destinations start points
+              </p>
+            </div>
+            <div>
+              <div className="text-center shadow-lg p-10 rounded-xl my-10">
+                <p className="text-2xl py-1 text-gray-800">Nike App Demo</p>
+                <video autoPlay loop muted className="h-300">
+                  <source src="/NikeAPP.mov" type="video/mp4" />
+                </video>
+                <p className="text-2xl py-1 text-gray-800">Redux</p>
+                <p className="text-md py-1 text-gray-800">
+                  Used for state management accross the app and allows user to
+                  build cart before placeing their order
+                </p>
+                <p className="text-2xl py-1 text-gray-800">
+                  Custom Restful Api
+                </p>
+                <p className="text-md py-1 text-gray-800">
+                  Custom Restful API that uses Node.js and Express to make
+                  requests to our backend.
+                </p>
+                <p className="text-2xl py-1 text-gray-800">MongoDB</p>
+                <p className="text-md py-1 text-gray-800">
+                  MongoDB database was used in this project as our database and
+                  allows users orders to be saved and retreived.
+                </p>
+              </div>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <p className="text-2xl py-1 text-gray-800">Twitter Clone</p>
+              <video autoPlay loop muted className="h-300">
+                <source src="/TwitterClone.mp4" type="video/mp4" />
+              </video>
+              <p className="text-2xl py-1 text-gray-800">Express</p>
+              <p className="text-md py-1 text-gray-800">
+                Express was used in this project to allow for custom APIs to our
+                backend.
+              </p>
+              <p className="text-2xl py-1 text-gray-800">Prisma</p>
+              <p className="text-md py-1 text-gray-800">
+                Prisma was used in this project as our database used for storing
+                users, tweets, and other information related to tweets.
+              </p>
+              <p className="text-2xl py-1 text-gray-800">Node</p>
+              <p className="text-md py-1 text-gray-800">
+                Used for state management accross the app and allows user to
+                build cart before placeing their order.
+              </p>
+              <p className="text-2xl py-1 text-gray-800">AWS SMS</p>
+              <p className="text-md py-1 text-gray-800">
+                Used for state management accross the app and allows user to
+                build cart before placeing their order.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 }
